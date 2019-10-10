@@ -55,16 +55,19 @@
   };
 </script>
 
-  <meta name="keywords" content="测试">
+  <meta name="description" content="好未来面试，2019年，记录下来">
+<meta name="keywords" content="前端,JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Roman">
-<meta property="og:url" content="http://houzezhou.github.io/2019/09/29/Roman/index.html">
+<meta property="og:title" content="好未来面试">
+<meta property="og:url" content="http://houzezhou.github.io/2019/10/10/好未来面试/index.html">
 <meta property="og:site_name" content="二狗">
+<meta property="og:description" content="好未来面试，2019年，记录下来">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-29T06:56:47.000Z">
+<meta property="og:updated_time" content="2019-10-10T03:14:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Roman">
-  <link rel="canonical" href="http://houzezhou.github.io/2019/09/29/Roman/">
+<meta name="twitter:title" content="好未来面试">
+<meta name="twitter:description" content="好未来面试，2019年，记录下来">
+  <link rel="canonical" href="http://houzezhou.github.io/2019/10/10/好未来面试/">
 
 
 <script id="page-configurations">
@@ -78,7 +81,7 @@
   };
 </script>
 
-  <title>Roman | 二狗</title>
+  <title>好未来面试 | 二狗</title>
   
 
 
@@ -215,7 +218,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://houzezhou.github.io/2019/09/29/Roman/">
+    <link itemprop="mainEntityOfPage" href="http://houzezhou.github.io/2019/10/10/好未来面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roman Pearce">
@@ -227,7 +230,7 @@
       <meta itemprop="name" content="二狗">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Roman
+        <h1 class="post-title" itemprop="name headline">好未来面试
 
           
         </h1>
@@ -243,7 +246,7 @@
                 
               
 
-              <time title="创建时间：2019-09-29 12:45:11 / 修改时间：14:56:47" itemprop="dateCreated datePublished" datetime="2019-09-29T12:45:11+08:00">2019-09-29</time>
+              <time title="创建时间：2019-10-10 10:27:33 / 修改时间：11:14:33" itemprop="dateCreated datePublished" datetime="2019-10-10T10:27:33+08:00">2019-10-10</time>
             </span>
           
             
@@ -256,7 +259,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Testing/" itemprop="url" rel="index"><span itemprop="name">Testing</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
 
                 
                 
@@ -275,7 +278,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>好未来面试，2019年，记录下来</p>
+<a id="more"></a>
+
+<h4 id="一、网站安全-XSS、CSRF、DDOS"><a href="#一、网站安全-XSS、CSRF、DDOS" class="headerlink" title="一、网站安全 XSS、CSRF、DDOS"></a>一、网站安全 XSS、CSRF、DDOS</h4><h6 id="1-XSS-Cross-Site-Scripting-跨站脚本攻击"><a href="#1-XSS-Cross-Site-Scripting-跨站脚本攻击" class="headerlink" title="1.XSS(Cross Site Scripting): 跨站脚本攻击"></a>1.XSS(Cross Site Scripting): 跨站脚本攻击</h6><p>在客户端评论区输入script代码获取用户信息cookie，利用img发送给攻击者，或者输入删除数据库的操作，存入后端执行删除库的命令<br>防范措施：</p>
+<ol>
+<li>在网站的Cookie加上HttpOnly属性：<br>Set-Cookie: JSESSIONID=xxxxxx;Path=/;Domain=book.com;HttpOnly<br>这样浏览器就禁止JavaScript的读取了。</li>
+<li>字符过滤：将用户输入的特殊字符例如&lt;,&gt;过滤掉。例如把&lt;变成&lt;，把&gt;变成&gt;</li>
+</ol>
+<h6 id="2-CSRF-Cross-Site-Request-Forgery-跨站请求伪造"><a href="#2-CSRF-Cross-Site-Request-Forgery-跨站请求伪造" class="headerlink" title="2.CSRF(Cross Site Request Forgery) 跨站请求伪造"></a>2.CSRF(Cross Site Request Forgery) 跨站请求伪造</h6><p>攻击原理：</p>
+<ol>
+<li>用户打开浏览器，访问受信任银行网站bank.com，并保留了登录凭证（Cookie）</li>
+<li>用户未退出银行网站之前，在同一浏览器中，打开一个TAB页访问其他网站B</li>
+<li>这时候网站B 已被黑客注入诱导信息，加入是一张图片,图片地址指向<br>src=”<a href="http://bank.com/withdraw?account=bob&amp;amount=1000000&amp;for=黑客" target="_blank" rel="noopener">http://bank.com/withdraw?account=bob&amp;amount=1000000&amp;for=黑客</a><br>点击之后转账给黑客这个账户，浏览器会默认携带bank.com的Cookie。</li>
+<li>浏览器在接收到这些攻击性代码请求后，根据网站B的请求，在用户不知情的情况下携带Cookie信息，根据用户的Cookie信息以C的权限处理该请求，导致来自黑客请求恶意代码被执行。<br>防范措施：<ol>
+<li>验证 HTTP Referer 字段</li>
+</ol>
+<ul>
+<li>服务器会验证客户端的请求来源，如果本网站请求的则响应，否则不响应。<br>但是即使这样，验证 HTTP Referer 字段 这种方式也存在安全隐患<pre><code>1. 对于某些浏览器，比如 IE6 或 FF2，目前已经有一些方法可以篡改 Referer 值    
+2. 用户自己可以设置浏览器使其在发送请求时不再提供 Referer</code></pre></li>
+</ul>
+<ol start="2">
+<li>使用 token </li>
+<li>加验证码验证  </li>
+</ol>
+</li>
+</ol>
+<h4 id="二、new-一个对象，所发生的事情？"><a href="#二、new-一个对象，所发生的事情？" class="headerlink" title="二、new 一个对象，所发生的事情？"></a>二、new 一个对象，所发生的事情？</h4><h4 id="三、var-声明一个字符串和，new-String-声明有什么区别"><a href="#三、var-声明一个字符串和，new-String-声明有什么区别" class="headerlink" title="三、var 声明一个字符串和，new String() 声明有什么区别"></a>三、var 声明一个字符串和，new String() 声明有什么区别</h4><h4 id="四、浏览器输入url-回车，经历了什么（请求到返回，每一步都可讲）"><a href="#四、浏览器输入url-回车，经历了什么（请求到返回，每一步都可讲）" class="headerlink" title="四、浏览器输入url 回车，经历了什么（请求到返回，每一步都可讲）"></a>四、浏览器输入url 回车，经历了什么（请求到返回，每一步都可讲）</h4><h4 id="五、vertical-align-原理？根据什么对齐的，，，这问的。。。"><a href="#五、vertical-align-原理？根据什么对齐的，，，这问的。。。" class="headerlink" title="五、vertical-align 原理？根据什么对齐的，，，这问的。。。"></a>五、vertical-align 原理？根据什么对齐的，，，这问的。。。</h4><h4 id="六、有没有把自己的脚手架，做成cli（就是-vue-admin这种放到npm里管理，虽然我们没做，但这个没什么高大上。。-）"><a href="#六、有没有把自己的脚手架，做成cli（就是-vue-admin这种放到npm里管理，虽然我们没做，但这个没什么高大上。。-）" class="headerlink" title="六、有没有把自己的脚手架，做成cli（就是 vue admin这种放到npm里管理，虽然我们没做，但这个没什么高大上。。 ）"></a>六、有没有把自己的脚手架，做成cli（就是 vue admin这种放到npm里管理，虽然我们没做，但这个没什么高大上。。 ）</h4><h4 id="七、-‘hao-wei-lai-gong-si’-写一个方法转成-‘haoWeiLaiGongSi’"><a href="#七、-‘hao-wei-lai-gong-si’-写一个方法转成-‘haoWeiLaiGongSi’" class="headerlink" title="七、 ‘hao-wei-lai-gong-si’ 写一个方法转成 ‘haoWeiLaiGongSi’"></a>七、 ‘hao-wei-lai-gong-si’ 写一个方法转成 ‘haoWeiLaiGongSi’</h4>
     </div>
 
     
@@ -290,7 +319,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/测试/" rel="tag"># 测试</a>
+              <a href="/tags/前端/" rel="tag"># 前端</a>
+            
+              <a href="/tags/JS/" rel="tag"># JS</a>
             
           </div>
         
@@ -300,8 +331,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/29/hexo/" rel="next" title="hexo 搭建">
-                  <i class="fa fa-chevron-left"></i> hexo 搭建
+                <a href="/2019/10/09/水滴筹笔试题/" rel="next" title="水滴筹笔试题">
+                  <i class="fa fa-chevron-left"></i> 水滴筹笔试题
                 </a>
               
             </div>
@@ -309,10 +340,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/09/水滴筹笔试题/" rel="prev" title="水滴筹笔试题">
-                  水滴筹笔试题 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -361,6 +388,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、网站安全-XSS、CSRF、DDOS"><span class="nav-number">1.</span> <span class="nav-text">一、网站安全 XSS、CSRF、DDOS</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-XSS-Cross-Site-Scripting-跨站脚本攻击"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.XSS(Cross Site Scripting): 跨站脚本攻击</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-CSRF-Cross-Site-Request-Forgery-跨站请求伪造"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.CSRF(Cross Site Request Forgery) 跨站请求伪造</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、new-一个对象，所发生的事情？"><span class="nav-number">2.</span> <span class="nav-text">二、new 一个对象，所发生的事情？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、var-声明一个字符串和，new-String-声明有什么区别"><span class="nav-number">3.</span> <span class="nav-text">三、var 声明一个字符串和，new String() 声明有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、浏览器输入url-回车，经历了什么（请求到返回，每一步都可讲）"><span class="nav-number">4.</span> <span class="nav-text">四、浏览器输入url 回车，经历了什么（请求到返回，每一步都可讲）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、vertical-align-原理？根据什么对齐的，，，这问的。。。"><span class="nav-number">5.</span> <span class="nav-text">五、vertical-align 原理？根据什么对齐的，，，这问的。。。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、有没有把自己的脚手架，做成cli（就是-vue-admin这种放到npm里管理，虽然我们没做，但这个没什么高大上。。-）"><span class="nav-number">6.</span> <span class="nav-text">六、有没有把自己的脚手架，做成cli（就是 vue admin这种放到npm里管理，虽然我们没做，但这个没什么高大上。。 ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七、-‘hao-wei-lai-gong-si’-写一个方法转成-‘haoWeiLaiGongSi’"><span class="nav-number">7.</span> <span class="nav-text">七、 ‘hao-wei-lai-gong-si’ 写一个方法转成 ‘haoWeiLaiGongSi’</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
