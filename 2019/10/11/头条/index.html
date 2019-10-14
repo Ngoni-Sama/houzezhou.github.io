@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="二狗">
 <meta property="og:description" content="头条面试，2019年，记录下来">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-11T02:04:46.000Z">
+<meta property="og:updated_time" content="2019-10-12T03:30:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="头条面试">
 <meta name="twitter:description" content="头条面试，2019年，记录下来">
@@ -246,11 +246,19 @@
                 
               
 
-              <time title="创建时间：2019-10-11 09:59:59 / 修改时间：10:04:46" itemprop="dateCreated datePublished" datetime="2019-10-11T09:59:59+08:00">2019-10-11</time>
+              <time title="创建时间：2019-10-11 09:59:59" itemprop="dateCreated datePublished" datetime="2019-10-11T09:59:59+08:00">2019-10-11</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-12 11:30:01" itemprop="dateModified" datetime="2019-10-12T11:30:01+08:00">2019-10-12</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -288,8 +296,11 @@
 <li>如果想让上面代码中的i分别输出 1 2 3 4 5 ，该怎么改？</li>
 <li>如果想让上面代码隔1s输出一次，怎样改？</li>
 <li>用promise实现8.2的需求？</li>
-<li>用async await实现8.2的需求？</li>
+<li>用async await实现8.2的需求？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">async function test() &#123;</span><br><span class="line">    for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">        await sleep(1000);</span><br><span class="line"> </span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function sleep(delay) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                resolve(1)</span><br><span class="line">            &#125; catch (e) &#123;</span><br><span class="line">                reject(0)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, delay);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
+<p>版权声明：本文为CSDN博主「coder麻雀」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/maquealone/article/details/90481540" target="_blank" rel="noopener">https://blog.csdn.net/maquealone/article/details/90481540</a></p>
 <h6 id="9、说说事件循环机制？"><a href="#9、说说事件循环机制？" class="headerlink" title="9、说说事件循环机制？"></a>9、说说事件循环机制？</h6><h6 id="10、说说VUE里虚拟dom的原理？"><a href="#10、说说VUE里虚拟dom的原理？" class="headerlink" title="10、说说VUE里虚拟dom的原理？"></a>10、说说VUE里虚拟dom的原理？</h6>
     </div>
 
@@ -326,6 +337,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/14/微博/" rel="prev" title="微博">
+                  微博 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -390,7 +405,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
