@@ -58,14 +58,14 @@
   <meta name="description" content="react面试，2019年，记录下来">
 <meta name="keywords" content="前端,JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微博">
+<meta property="og:title" content="react">
 <meta property="og:url" content="http://houzezhou.github.io/2019/10/14/react/index.html">
 <meta property="og:site_name" content="二狗">
 <meta property="og:description" content="react面试，2019年，记录下来">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-14T10:09:57.000Z">
+<meta property="og:updated_time" content="2019-10-15T01:41:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微博">
+<meta name="twitter:title" content="react">
 <meta name="twitter:description" content="react面试，2019年，记录下来">
   <link rel="canonical" href="http://houzezhou.github.io/2019/10/14/react/">
 
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>微博 | 二狗</title>
+  <title>react | 二狗</title>
   
 
 
@@ -230,7 +230,7 @@
       <meta itemprop="name" content="二狗">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">微博
+        <h1 class="post-title" itemprop="name headline">react
 
           
         </h1>
@@ -246,11 +246,19 @@
                 
               
 
-              <time title="创建时间：2019-10-14 10:54:05 / 修改时间：18:09:57" itemprop="dateCreated datePublished" datetime="2019-10-14T10:54:05+08:00">2019-10-14</time>
+              <time title="创建时间：2019-10-14 10:54:05" itemprop="dateCreated datePublished" datetime="2019-10-14T10:54:05+08:00">2019-10-14</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-15 09:41:09" itemprop="dateModified" datetime="2019-10-15T09:41:09+08:00">2019-10-15</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -337,7 +345,7 @@
 <li>State 是一种数据结构，用于组件挂载时所需数据的默认值。State 可能会随着时间的推移而发生突变，但多数时候是作为用户事件行为的结果。</li>
 <li>Props(properties 的简写)则是组件的配置。props 由父组件传递给子组件，并且就子组件而言，props 是不可变的(immutable)。组件不能改变自身的 props，但是可以把其子组件的 props 放在一起(统一管理)。Props 也不仅仅是数据–回调函数也可以通过 props 传递。</li>
 </ul>
-<h5 id="十二、何为受控组件-controlled-component"><a href="#十二、何为受控组件-controlled-component" class="headerlink" title="十二、何为受控组件(controlled component)"></a>十二、何为受控组件(controlled component)</h5><p>在 HTML 中，类似 <input>, <textarea> 和 </textarea><select> 这样的表单元素会维护自身的状态，并基于用户的输入来更新。当用户提交表单时，前面提到的元素的值将随表单一起被发送。但在 React 中会有些不同，包含表单元素的组件将会在 state 中追踪输入的值，并且每次调用回调函数时，如 onChange 会更新 state，重新渲染组件。一个输入表单元素，它的值通过 React 的这种方式来控制，这样的元素就被称为”受控元素”。</select></p>
+<h5 id="十二、何为受控组件-controlled-component"><a href="#十二、何为受控组件-controlled-component" class="headerlink" title="十二、何为受控组件(controlled component)"></a>十二、何为受控组件(controlled component)</h5><p>在 HTML 中，类似 input, textarea 和 select 这样的表单元素会维护自身的状态，并基于用户的输入来更新。当用户提交表单时，前面提到的元素的值将随表单一起被发送。但在 React 中会有些不同，包含表单元素的组件将会在 state 中追踪输入的值，并且每次调用回调函数时，如 onChange 会更新 state，重新渲染组件。一个输入表单元素，它的值通过 React 的这种方式来控制，这样的元素就被称为”受控元素”。</p>
 <h5 id="十三、何为高阶组件-higher-order-component"><a href="#十三、何为高阶组件-higher-order-component" class="headerlink" title="十三、何为高阶组件(higher order component)"></a>十三、何为高阶组件(higher order component)</h5><p>高阶组件是一个以组件为参数并返回一个新组件的函数。HOC 运行你重用代码、逻辑和引导抽象。最常见的可能是 Redux 的 connect 函数。除了简单分享工具库和简单的组合，HOC 最好的方式是共享 React 组件之间的行为。如果你发现你在不同的地方写了大量代码来做同一件事时，就应该考虑将代码重构为可重用的 HOC。</p>
 <h5 id="十四、为什么建议传递给-setState-的参数是一个-callback-而不是一个对象"><a href="#十四、为什么建议传递给-setState-的参数是一个-callback-而不是一个对象" class="headerlink" title="十四、为什么建议传递给 setState 的参数是一个 callback 而不是一个对象"></a>十四、为什么建议传递给 setState 的参数是一个 callback 而不是一个对象</h5><p>因为 this.props 和 this.state 的更新可能是异步的，不能依赖它们的值去计算下一个 state。</p>
 <h5 id="十五、除了在构造函数中绑定-this，还有其它方式吗"><a href="#十五、除了在构造函数中绑定-this，还有其它方式吗" class="headerlink" title="十五、除了在构造函数中绑定 this，还有其它方式吗"></a>十五、除了在构造函数中绑定 this，还有其它方式吗</h5><p>你可以使用属性初始值设定项(property initializers)来正确绑定回调，create-react-app 也是默认支持的。在回调中你可以使用箭头函数，但问题是每次组件渲染时都会创建一个新的回调。</p>
@@ -411,8 +419,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/14/琐碎/" rel="prev" title="微博">
-                  微博 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/10/14/琐碎/" rel="prev" title="琐碎">
+                  琐碎 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
