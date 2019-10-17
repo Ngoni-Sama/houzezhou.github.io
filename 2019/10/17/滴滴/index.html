@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="面试，2019年，记录下来">
+<meta name="keywords" content="前端,JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="滴滴">
+<meta property="og:url" content="http://houzezhou.github.io/2019/10/17/滴滴/index.html">
+<meta property="og:site_name" content="二狗">
+<meta property="og:description" content="面试，2019年，记录下来">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-17T10:17:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="滴滴">
+<meta name="twitter:description" content="面试，2019年，记录下来">
+  <link rel="canonical" href="http://houzezhou.github.io/2019/10/17/滴滴/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>滴滴 | 二狗</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二狗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-首页">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-标签">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-分类">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-时间轴">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://houzezhou.github.io/2019/10/17/滴滴/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roman Pearce">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二狗">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">滴滴
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-17 16:09:01 / 修改时间：18:17:26" itemprop="dateCreated datePublished" datetime="2019-10-17T16:09:01+08:00">2019-10-17</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>面试，2019年，记录下来</p>
+<a id="more"></a>
+
+<h6 id="1、请写出如下输出结果及等待时间"><a href="#1、请写出如下输出结果及等待时间" class="headerlink" title="1、请写出如下输出结果及等待时间"></a>1、请写出如下输出结果及等待时间</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;begin&apos;)</span><br><span class="line">for(var i = 0; i &lt; 5; i++)&#123;</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">        console.log(i)</span><br><span class="line">    &#125;, 1000)</span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;end&apos;)</span><br><span class="line"></span><br><span class="line">// begin</span><br><span class="line">// end</span><br><span class="line">// 1s后 输出五个5</span><br></pre></td></tr></table></figure>
+
+<h6 id="2、点击li输出第几条"><a href="#2、点击li输出第几条" class="headerlink" title="2、点击li输出第几条"></a>2、点击li输出第几条</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;container&quot;&gt;</span><br><span class="line">    &lt;li&gt;第一条&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第二条&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第三条&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第四条&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第五条&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 方式1：使用闭包</span><br><span class="line">var lis1 = document.getElementById(&quot;container&quot;).getElementsByTagName(&apos;li&apos;)</span><br><span class="line">function fn1()&#123;</span><br><span class="line">    for(var i = 0, len = lis1.length; i &lt; len; i++)&#123;</span><br><span class="line">        (function(index)&#123;</span><br><span class="line">            lis1[i].addEventListener(&apos;click&apos;, function(e)&#123;</span><br><span class="line">                alert(index + this.innerHTML)  // 或者 e.target.innerHTML</span><br><span class="line">            &#125;, false)</span><br><span class="line">        &#125;)(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1()</span><br><span class="line"></span><br><span class="line">// 方式2：ES6的let</span><br><span class="line">var lis2 = document.getElementById(&quot;container&quot;).getElementsByTagName(&apos;li&apos;)</span><br><span class="line">function fn2()&#123;</span><br><span class="line">    for(let i = 0, len = lis2.length; i &lt; len; i++)&#123;</span><br><span class="line">        lis2[i].addEventListener(&apos;click&apos;, function(e)&#123;</span><br><span class="line">            alert(i + e.target.innerHTML)  // 或者 e.target.innerHTML</span><br><span class="line">        &#125;, false)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn2()</span><br><span class="line"></span><br><span class="line">// 方式3：事件代理</span><br><span class="line">var ul = document.getElementById(&quot;container&quot;)</span><br><span class="line">var lis3 = ul.getElementsByTagName(&apos;li&apos;)</span><br><span class="line">ul.addEventListener(&apos;click&apos;, function(e)&#123;</span><br><span class="line">    var ev = ev || window.event;  </span><br><span class="line">    var target = ev.target || ev.srcElemnt;</span><br><span class="line"></span><br><span class="line">    for(var i = 0, len = lis3.length; i &lt; len; i++)&#123;</span><br><span class="line">        if(lis3[i] == target)&#123;</span><br><span class="line">            alert(i + target.innerHTML)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h6 id="3、实现如下继承函数，传入A和B两个类，要求A-要继承于-B"><a href="#3、实现如下继承函数，传入A和B两个类，要求A-要继承于-B" class="headerlink" title="3、实现如下继承函数，传入A和B两个类，要求A 要继承于 B"></a>3、实现如下继承函数，传入A和B两个类，要求A 要继承于 B</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function inherit (A, B)&#123;</span><br><span class="line">    // 方法1：</span><br><span class="line">    A.prototype = new B()</span><br><span class="line">    // 方法2： ？</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4、实现一个宽-100px、高100px的弹框，在屏幕上下左右居中"><a href="#4、实现一个宽-100px、高100px的弹框，在屏幕上下左右居中" class="headerlink" title="4、实现一个宽 100px、高100px的弹框，在屏幕上下左右居中"></a>4、实现一个宽 100px、高100px的弹框，在屏幕上下左右居中</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.layer &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line"></span><br><span class="line">    // 在此补充：</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">https://muyiy.cn/question/css/52.html</span><br><span class="line"></span><br><span class="line">// 子相对于父 上下左右居中：</span><br><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// 方法 1</span><br><span class="line">div.parent &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 2</span><br><span class="line">div.parent &#123;</span><br><span class="line">    position: relative; </span><br><span class="line">&#125;</span><br><span class="line">div.child &#123;</span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translate(-50%, -50%);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5、实现一个动画函数，实现A元素围绕B元素匀速旋转动画？无需考虑透明度动画"><a href="#5、实现一个动画函数，实现A元素围绕B元素匀速旋转动画？无需考虑透明度动画" class="headerlink" title="5、实现一个动画函数，实现A元素围绕B元素匀速旋转动画？无需考虑透明度动画"></a>5、实现一个动画函数，实现A元素围绕B元素匀速旋转动画？无需考虑透明度动画</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function animation (el, start, end, during) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="6、实现一个简易的前端模板引擎"><a href="#6、实现一个简易的前端模板引擎" class="headerlink" title="6、实现一个简易的前端模板引擎"></a>6、实现一个简易的前端模板引擎</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function tpl (template, data) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">// 使用</span><br><span class="line">tpl(&apos;&lt;div class=&quot;&#123;%className%&#125;&quot;&gt; &#123;%name%&#125; &lt;/div&gt;&apos;, &#123;name: 123, className: &quot;hd&quot;&#125;)</span><br><span class="line">// &lt;div class=&quot;hd&quot;&gt; 123 &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="7、打印结果"><a href="#7、打印结果" class="headerlink" title="7、打印结果"></a>7、打印结果</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var a = 1</span><br><span class="line">function Fn1()&#123;</span><br><span class="line">	var a = 2;</span><br><span class="line">	alert(this.a + a)</span><br><span class="line">&#125;</span><br><span class="line">function Fn2()&#123;</span><br><span class="line">	var a = 10;</span><br><span class="line">	Fn1()</span><br><span class="line">&#125;</span><br><span class="line">Fn2()  // 输出结果：  3</span><br><span class="line"></span><br><span class="line">var Fn3 = function()&#123;</span><br><span class="line">	this.a = 3</span><br><span class="line">&#125;</span><br><span class="line">Fn3.prototype = &#123;</span><br><span class="line">	a: 4</span><br><span class="line">&#125;</span><br><span class="line">var fn3 = new Fn3()</span><br><span class="line">Fn1.call(fn3)  // 输出结果：  5</span><br></pre></td></tr></table></figure>
+
+<h6 id="8、实现-concat-函数，将两个已经排好序的数组按照次序拼装为一个数组"><a href="#8、实现-concat-函数，将两个已经排好序的数组按照次序拼装为一个数组" class="headerlink" title="8、实现 concat 函数，将两个已经排好序的数组按照次序拼装为一个数组"></a>8、实现 concat 函数，将两个已经排好序的数组按照次序拼装为一个数组</h6><p>比如以下两个数组：<br>A: [1, 3, 5, 7, 8, 9, 15]<br>B: [2, 4, 6, 8, 13]<br>合并为：[1, 2, 3, 4, 5, 7, 8, 8, 9, 13, 15]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function concat(A, B)&#123;</span><br><span class="line">    // 这样不对吧？</span><br><span class="line">    var temp = A.concat(B)</span><br><span class="line">    return temp.sort(function(a,b)&#123;</span><br><span class="line">        return a &gt; b ? 1 : -1</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="9、实现-reverse-函数将二叉树各节点左右翻转"><a href="#9、实现-reverse-函数将二叉树各节点左右翻转" class="headerlink" title="9、实现 reverse 函数将二叉树各节点左右翻转"></a>9、实现 reverse 函数将二叉树各节点左右翻转</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">        1</span><br><span class="line">    2           3</span><br><span class="line">4       5   6       7 </span><br><span class="line"></span><br><span class="line">        1</span><br><span class="line">    3          2</span><br><span class="line">7       6   5       4</span><br></pre></td></tr></table></figure>
+
+<p>节点数据结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var node = &#123;</span><br><span class="line">    value: 1,</span><br><span class="line">    left: node2,</span><br><span class="line">    right: node3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function reverse(node) &#123;</span><br><span class="line">    if(node.left &amp;&amp; node.right)&#123;</span><br><span class="line">        var item = node.left;</span><br><span class="line">        node.left = node.right;</span><br><span class="line">        node.right = item;</span><br><span class="line">    &#125;</span><br><span class="line">    node.left &amp;&amp; reverse(node.left)</span><br><span class="line">    node.right &amp;&amp; reverse(node.right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="10、-问答"><a href="#10、-问答" class="headerlink" title="10、 问答"></a>10、 问答</h6><ol>
+<li>实现promise.all</li>
+<li>原型链相关知识</li>
+<li>怎么定义个可枚举类型</li>
+<li>事件委托</li>
+<li>第二题优化方案</li>
+<li>flex都有哪些熟悉，各代表啥意思</li>
+<li>事件循环机制</li>
+<li>http https区别</li>
+<li>第8题有没有时间复杂度为n的方法</li>
+<li>协商缓存和强制缓存<br><a href="https://www.jianshu.com/p/9c95db596df5" target="_blank" rel="noopener">https://www.jianshu.com/p/9c95db596df5</a><br><a href="https://segmentfault.com/a/1190000016199807?utm_source=tag-newest" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016199807?utm_source=tag-newest</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/前端/" rel="tag"># 前端</a>
+            
+              <a href="/tags/JS/" rel="tag"># JS</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/14/琐碎/" rel="next" title="琐碎woca">
+                  <i class="fa fa-chevron-left"></i> 琐碎woca
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、请写出如下输出结果及等待时间"><span class="nav-number">1.</span> <span class="nav-text">1、请写出如下输出结果及等待时间</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、点击li输出第几条"><span class="nav-number">2.</span> <span class="nav-text">2、点击li输出第几条</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、实现如下继承函数，传入A和B两个类，要求A-要继承于-B"><span class="nav-number">3.</span> <span class="nav-text">3、实现如下继承函数，传入A和B两个类，要求A 要继承于 B</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4、实现一个宽-100px、高100px的弹框，在屏幕上下左右居中"><span class="nav-number">4.</span> <span class="nav-text">4、实现一个宽 100px、高100px的弹框，在屏幕上下左右居中</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5、实现一个动画函数，实现A元素围绕B元素匀速旋转动画？无需考虑透明度动画"><span class="nav-number">5.</span> <span class="nav-text">5、实现一个动画函数，实现A元素围绕B元素匀速旋转动画？无需考虑透明度动画</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6、实现一个简易的前端模板引擎"><span class="nav-number">6.</span> <span class="nav-text">6、实现一个简易的前端模板引擎</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7、打印结果"><span class="nav-number">7.</span> <span class="nav-text">7、打印结果</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8、实现-concat-函数，将两个已经排好序的数组按照次序拼装为一个数组"><span class="nav-number">8.</span> <span class="nav-text">8、实现 concat 函数，将两个已经排好序的数组按照次序拼装为一个数组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#9、实现-reverse-函数将二叉树各节点左右翻转"><span class="nav-number">9.</span> <span class="nav-text">9、实现 reverse 函数将二叉树各节点左右翻转</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#10、-问答"><span class="nav-number">10.</span> <span class="nav-text">10、 问答</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Roman Pearce</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Roman Pearce</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
